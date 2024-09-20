@@ -1,0 +1,122 @@
+body{
+margin:0;
+width:100%;
+color:#b2ff66;
+font-family:"bahnschrift", semibold;
+font-size:18px;
+}
+
+
+
+header{
+background-color:#99ff99;
+height:138px;
+width:100%;
+}
+
+header h1{
+font-size:36px;
+font-family:"bahnschrift", condensed;
+font-weight:700;
+color:#00994c;
+margin:0;
+padding:12px 0 0 154px;
+}
+
+nav{
+background-color:#00994c;
+float:right;
+padding: 0 20px 20px 20px;
+border: thick double #b2ff66;
+}
+
+nav ul{
+display:none;
+color:#b2ff66;
+font-family:"bahnschrift", semibold;
+font-size:18px;
+font-weight:700;
+padding:0 0 0 20px;
+margin:0 20px 0 0;
+border:solid 2px #b2ff66;
+border-top-width:0;
+position:absolute;
+background-color:#00994c;
+top:25px;
+}
+
+nav ul:hover{
+display:block;
+}
+
+#usefullinks:hover+ul{
+display:block;
+}
+
+a{
+color:#b2ff66;
+font-family:"bahnschrift", semibold;
+font-size:18px;
+font-weight:700;
+}
+
+#content{
+max-width:960px;
+margin:0 auto;
+background-color:#003319;
+transform:translateY(-10px);
+}
+
+header img{
+height:128px;
+width:128px;
+padding:10px;
+background-color:#ccffcc;
+float:left;
+}
+
+.tabhed{
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+max-width:50%;
+}
+
+.tabhed table{
+width:100%;
+//background-color:#ccffcc;
+border-collapse:collapse;
+border-spacing:0;
+}
+
+.tabhed tr{
+width:100%;
+}
+
+.tabhed td{
+width:25%;
+text-align:center;
+border:solid 2px #b2ff66;
+}
+
+footer{
+background-color:#99ff99;
+color:#00994c;
+width:100%;
+height:72px;
+}
+
+footer img{
+float:left;
+}
+
+footer img:hover+#me{
+display:block;
+}
+
+#me{
+display:none;
+margin:0;
+font-size:18px;
+padding:27px 0;
+}
