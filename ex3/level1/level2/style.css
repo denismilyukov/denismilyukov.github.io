@@ -1,3 +1,4 @@
+
 body{
 margin:0;
 width:100%;
@@ -14,7 +15,6 @@ width:100%;
 
 header{
 background-color:#99ff99;
-height:138px;
 width:100%;
 }
 
@@ -39,10 +39,11 @@ nav{
 display:flex;
 flex-direction:column;
 background-color:#00994c;
-float:right;
-padding: 0 20px 20px 20px;
-border: thick double #b2ff66;
 width:100%;
+}
+
+nav ul{
+display:none;
 }
 
 #usefullinks{
@@ -74,14 +75,19 @@ font-weight:700;
 max-width:960px;
 margin:0 auto;
 background-color:#003319;
-transform:translateY(-10px);
+display:flex;
+flex-direction:column;
+}
+
+#content ul{
+margin:0;
+order:2;
 }
 
 .tabhed{
-margin-left:auto;
-margin-right:auto;
+margin:0 auto 18px auto;
 text-align:center;
-max-width:50%;
+order:1;
 }
 
 .tabhed table{
@@ -101,9 +107,13 @@ text-align:center;
 border:solid 2px #b2ff66;
 }
 
+form{
+order:3;
+}
+
 footer{
-background-color:#99ff99;
-color:#00994c;
+background-color:#00994c;
+color:#b2ff66;
 width:100%;
 height:72px;
 }
@@ -123,42 +133,60 @@ font-size:18px;
 padding:27px 0;
 }
 
-@media screen and (min-width:800px){
-#header-nav{
-flex-direction:row;
-}
-
-nav{
-flex:3;
-}
-
-header{
-flex:16;
-}
 
 
-nav ul{
-display:none;
-color:#b2ff66;
-font-family:"bahnschrift", semibold;
-font-size:18px;
-font-weight:700;
-border:solid 2px #b2ff66;
-position:absolute;
-background-color:#00994c;
-top:25px;
-right:60px;
-border-collapse:collapse;
-margin:0 auto;
-}
+@media (min-width:800px){
+    #header-nav{
+    flex-direction:row;
+    }
 
-nav ul:hover{
-display:block;
-}
+    nav{
+    flex:3;
+    }
 
-#usefullinks:hover+ul{
-display:block;
-}
+    header{
+    flex:16;
+    }
+
+
+    nav ul{
+    display:none;
+    color:#b2ff66;
+    font-family:"bahnschrift", semibold;
+    font-size:18px;
+    font-weight:700;
+    border:solid 2px #b2ff66;
+    position:absolute;
+    background-color:#00994c;
+    top:25px;
+    right:60px;
+    border-collapse:collapse;
+    margin:0 auto;
+    }
+
+    nav ul:hover{
+    display:block;
+    }
+
+    #usefullinks:hover+ul{
+    display:block;
+    }
+
+    #content ul{
+    order:1;
+    }
+
+    .tabhed{
+    margin:0 auto;
+    text-align:center;
+    max-width:50%;
+    order:2;
+    }
+
+    footer{
+    order:3;
+    }
+
 
 
 }
