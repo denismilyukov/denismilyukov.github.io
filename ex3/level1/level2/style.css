@@ -101,6 +101,10 @@ border-spacing:0;
 width:100%;
 }
 
+tr:nth-child(2n){
+background-color: #556B2F;
+}
+
 .tabhed td{
 width:25%;
 text-align:center;
@@ -181,10 +185,6 @@ padding:27px 0;
     text-align:center;
     max-width:50%;
     order:2;
-    }
-
-    tr:nth-child(2n){
-    background-color: #556B2F;
     }
 
     footer{
