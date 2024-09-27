@@ -183,6 +183,10 @@ padding:27px 0;
     order:2;
     }
 
+    tr:nth-child(2n){
+    background-color: #556B2F;
+    }
+
     footer{
     order:3;
     }
