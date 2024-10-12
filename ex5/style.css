@@ -41,28 +41,11 @@ display:flex;
 flex-direction:column;
 background-color:#00994c;
 width:100%;
+align-items:center;
 }
 
-nav ul{
-display:none;
-}
-
-#usefullinks{
-flex:1;
-margin:0 auto;
-text-align:center;
-}
-
-#item1{
-flex:1;
-margin:0 auto;
-text-align:center;
-}
-
-#item2{
-flex:1;
-margin:0 auto;
-text-align:center;
+nav a{
+margin:3px;
 }
 
 a{
@@ -70,6 +53,7 @@ color:#b2ff66;
 font-family:"bahnschrift", semibold;
 font-size:18px;
 font-weight:700;
+text-decoration:none;
 }
 
 #content{
@@ -83,6 +67,10 @@ flex-direction:column;
 #content ul{
 margin:0;
 order:2;
+}
+
+#content li::marker{
+content:"🧠";
 }
 
 .tabhed{
@@ -112,8 +100,36 @@ text-align:center;
 border:solid 2px #b2ff66;
 }
 
-form{
+#forma-calc{
+display:flex;
+flex-direction:column;
 order:3;
+}
+
+.calculator{
+display:flex;
+flex-direction:column;
+align-items:center;
+flex:1;
+}
+
+input, select, button{
+border-radius:6px;
+background-color:#00994c;
+color:#b2ff66;
+font-family:"bahnschrift", semibold;
+margin:4px;
+}
+
+button:hover{
+background-color:#b2ff66;
+color:#00994c;
+transition:0.5s;
+}
+
+#forma{
+flex:1;
+margin-top:18px;
 }
 
 footer{
@@ -141,6 +157,10 @@ padding:27px 0;
 
 
 @media (min-width:800px){
+    a:hover{
+    color:#556B2F;
+    }
+
     #header-nav{
     flex-direction:row;
     }
@@ -151,9 +171,15 @@ padding:27px 0;
     align-items:center;
     background-color:#99ff99;
     }
+
     nav a{
     height:25%;
     color:#00994c;
+    margin:18px;
+    }
+
+    nav a:hover{
+    color:#006400;
     }
 
     header{
@@ -174,6 +200,10 @@ padding:27px 0;
     text-align:center;
     max-width:50%;
     order:2;
+    }
+
+    #forma-calc{
+    flex-direction:row;
     }
 
     footer{
