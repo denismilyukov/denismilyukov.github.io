@@ -5,6 +5,7 @@ width:100%;
 color:#b2ff66;
 font-family:"bahnschrift", semibold;
 font-size:18px;
+background-color:#669966;
 }
 
 #header-nav{
@@ -141,6 +142,42 @@ flex:1;
 margin-top:18px;
 }
 
+#gallery-container{
+position:relative;
+overflow:hidden;
+}
+
+#gallery{
+display:flex;
+flex-direction:row;
+align-items:center;
+transition: transform 0.5s ease;
+}
+
+#gallery img{
+height:30%;
+width:30%;
+flex:0 0 100%;
+}
+
+.arrow{
+position:absolute;
+top:50%;
+z-index:10;
+}
+
+.arrow-left{
+left:10px;
+}
+
+.arrow-right{
+right:10px;
+}
+
+#pager{
+text-align:center;
+}
+
 footer{
 background-color:#00994c;
 color:#b2ff66;
@@ -202,6 +239,12 @@ padding:27px 0;
 
     #content ul{
     order:1;
+    }
+
+    #gallery img{
+    height:30%;
+    width:30%;
+    flex:0 0 33.33%;
     }
 
     .tabhed{

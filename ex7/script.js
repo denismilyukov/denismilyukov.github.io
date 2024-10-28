@@ -60,3 +60,49 @@ const quantityInput = document.getElementById('quantity');
 
         // Инициализация
         updateOptions();
+
+const totalSlides = 8;
+let curSlide = 0;
+let curPage = 1;
+let slidesPerPage = 1;
+let totalPages = totalSlides - slidesPerPage + 1;
+
+function updateGallery(){
+    if (window.innerWidth >= 800){
+        slidesPerPage = 3;
+    }
+    else slidesPerPage = 1;
+    totalPages = totalSlides - slidesPerPage + 1;
+}
+
+
+const gallery = document.getElementById('gallery');
+const pager = document.getElementById('pager');
+
+function updatePager(){
+    pager.textContent = `Фото ${curPage} из ${totalPages}`;
+}
+
+function moveSlide(dir){
+    curSlide += dir;
+    curPage += dir;
+    if (curSlide < 0){
+        curSlide = 0;
+        curPage = 1;
+    }
+    if (curPage > totalPages){
+        curPage = 1;
+        curSlide = 0;
+    }
+    const offset = curSlide * 100 / slidesPerPage;
+    gallery.style.transform = `translateX(-${offset}%)`;
+    updatePager();
+}
+
+updateGallery();
+updatePager();
+
+ window.addEventListener('resize', function e(){
+    updateGallery();
+    updatePager();
+});

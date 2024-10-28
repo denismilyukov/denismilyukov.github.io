@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея изображений</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            flex: 0 0 33.33%; /* 3 изображения на экране */
+        }
+        @media (max-width: 768px) {
+            .gallery img {
+                flex: 0 0 100%; /* 1 изображение на экране для смартфонов */
+            }
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+        .arrow-left {
+            left: 10px;
+        }
+        .arrow-right {
+            right: 10px;
+        }
+        .pager {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <button class="arrow arrow-left" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="gallery" id="gallery">
+            <img src = "zombie-fisher.png" alt = "ZombieFisher">
+            <img src = "FirePea.jpg" alt = "FirePea">
+            <img src = "Newspaper_Zombie.jpg" alt = "NewspaperZombie">
+            <img src = "PrimalWallnut.jpg" alt = "PrimallWallnut">
+            <img src = "hypnodenc.jpg" alt = "hypnodenc">
+            <img src = "Snow_Pea_29.jpg" alt = "SnowPea">
+            <img src = "Cactus.jpg" alt = "Cactus">
+            <img src = "113.png" alt = "Karasik">
+        </div>
+        <button class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <div class="pager" id="pager">Страница 1 из 3</div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 8;
+        const slidesToShow = 3; // Количество изображений, которые показываются на экране
+        const totalPages = Math.ceil(totalSlides / slidesToShow);
+        const gallery = document.getElementById('gallery');
+        const pager = document.getElementById('pager');
+
+        function updatePager() {
+            pager.textContent = `Страница ${currentSlide + 1} из ${totalPages}`;
+        }
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            } else if (currentSlide >= totalPages) {
+                currentSlide = totalPages - 1;
+            }
+
+            const offset = currentSlide * (100 / slidesToShow);
+            gallery.style.transform = `translateX(-${offset}%)`;
+            updatePager();
+        }
+
+        updatePager(); // Инициализация пейджера
+    </script>
+</body>
+</html>
