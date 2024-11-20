@@ -16,14 +16,10 @@ document.getElementById('openModal').onclick = function() {
            body: formData
        })
        .then(response => {
-           if (!response.ok) throw new Error('Ошибка при отправке данных');
            alert('Форма успешно отправлена!');
            localStorage.removeItem('formData');
            this.reset();
        })
-       .catch(error => {
-           alert('Произошла ошибка: ' + error);
-       });
 
        saveFormData();
    };
